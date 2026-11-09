@@ -1,0 +1,30 @@
+{
+  "name": "vhicle-mgmt-process",
+  "version": "1.0.0",
+  "description": "Vehicle Process Management System for Transport Company",
+  "main": "server/server.js",
+  "scripts": {
+    "server": "node server/server.js",
+    "client": "npm run dev --prefix client",
+    "dev": "concurrently -k -p \"[{name}]\" -n \"SERVER,CLIENT\" -c \"cyan.bold,magenta.bold\" \"node server/server.js\" \"npm run dev --prefix client\"",
+    "build": "npm run build --prefix client",
+    "test": "node tests/run_tests.js"
+  },
+  "keywords": [
+    "transport",
+    "logistics",
+    "fleet-management",
+    "vehicle-process-management"
+  ],
+  "author": "Antigravity Engineering",
+  "license": "ISC",
+  "dependencies": {
+    "better-sqlite3": "^11.8.1",
+    "concurrently": "^9.1.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "multer": "^1.4.5-lts.1",
+    "xlsx": "^0.18.5"
+  }
+}
